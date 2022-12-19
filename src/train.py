@@ -1,15 +1,22 @@
-# Import ./libs/loadData.py
-# Import ./libs/preparateData.py
-import json, os, pandas, pickle, time
+#       
+#   Apache License 2.0
+#   Repository: https://github.com/ZhengLinLei/ZDMP
+#
+#   This file is used to train and dump the model trained by ./train.py
+#
+
+# ------------------------- #
+
+# Import modules
+import json, os, pickle, time
 from libs.loadData import load_data
 from libs.preparateData import prepare_data, split_data
-from libs.evaluateData import eval_data
 
-# Import models in ./models folder
-from models.LinearRegression import LinearRegressionModel
-from models.RandomForest import RandomForestModel
+# We are goint to use KNN model with k=1 to predict the reliability of the batch in this case, for different datasets, you can use different models
+# Execute ./train_eval.py to find the best model
+
+# Import KNN model
 from models.KNNeighbors import KNNModel
-from models.SVM import SVMModel
 
 # Get execution time()
 start_time = time.time()
@@ -28,97 +35,20 @@ Y, X  = prepare_data(df)
 # Split the data
 X_train, X_test, Y_train, Y_test = split_data(X, Y)
 
-# Train the model
-# |
-# |-> LinearRegression
-# |-> RandomForest
-# |-> KNNeighbors
-# |-> SVM
-
-# LinearRegression
-lr = LinearRegressionModel(X_train, Y_train)
-Y_lr_train_pred = lr.predict(X_train)                       # Predict the training data
-Y_lr_test_pred = lr.predict(X_test)                         # Predict the test data
-
-# RandomForest
-rf = RandomForestModel(X_train, Y_train)
-Y_rf_train_pred = rf.predict(X_train)                       # Predict the training data
-Y_rf_test_pred = rf.predict(X_test)                         # Predict the test data
-
-# KNNeighbors
-kn = KNNModel(X_train, Y_train)
+# Train the model KNN with k=1
+kn = KNNModel(X_train, Y_train, c=1)
 Y_kn_train_pred = kn.predict(X_train)                       # Predict the training data
 Y_kn_test_pred = kn.predict(X_test)                         # Predict the test data
 
-# SVM
-svm = SVMModel(X_train, Y_train)
-Y_svm_train_pred = svm.predict(X_train)                     # Predict the training data
-Y_svm_test_pred = svm.predict(X_test)                       # Predict the test data
-
-# Evaluate the model
-# |
-# |-> LinearRegression - 0
-# |-> RandomForest     - 1
-# |-> KNNeighbors      - 2
-# |-> SVM              - 3
+# Dump the model
+with open(os.path.join(CURRENT_PATH, CONFIG['build']['path']), 'wb') as f:
+    pickle.dump(kn, f)
 
 
-EVAL_MODEL = []
-R2_EVAL = []
-MSE_EVAL = []
-#
-# LinearRegression
-# mse_lr_train, r2_lr_train = eval_data(Y_train, Y_lr_train_pred)     # Evaluate the training data
-# mse_lr_test, r2_lr_test = eval_data(Y_test, Y_lr_test_pred)         # Evaluate the test data
-# R2_EVAL.append([r2_lr_train, r2_lr_test])
-# MSE_EVAL.append([mse_lr_train, mse_lr_test])
-
-# RandomForest
-# mse_rf_train, r2_rf_train = eval_data(Y_train, Y_rf_train_pred)     # Evaluate the training data
-# mse_rf_test, r2_rf_test = eval_data(Y_test, Y_rf_test_pred)         # Evaluate the test data
-# R2_EVAL.append([r2_rf_train, r2_rf_test])
-# MSE_EVAL.append([mse_rf_train, mse_rf_test])
-
-# KNNeighbors
-mse_kn_train, r2_kn_train = eval_data(Y_train, Y_kn_train_pred)     # Evaluate the training data
-mse_kn_test, r2_kn_test = eval_data(Y_test, Y_kn_test_pred)         # Evaluate the test data
-R2_EVAL.append([r2_kn_train, r2_kn_test])
-MSE_EVAL.append([mse_kn_train, mse_kn_test])
-
-# SVM
-mse_svm_train, r2_svm_train = eval_data(Y_train, Y_svm_train_pred)  # Evaluate the training data
-mse_svm_test, r2_svm_test = eval_data(Y_test, Y_svm_test_pred)      # Evaluate the test data
-R2_EVAL.append([r2_svm_train, r2_svm_test])
-MSE_EVAL.append([mse_svm_train, mse_svm_test])
+# Print execution time
+print('Execution time: {} seconds'.format(time.time() - start_time))
 
 
-MODEL = [lr, rf, kn, svm]
-MODEL_NAME = ['LinearRegression', 'RandomForest', 'KNNeighbors', 'SVM']
-
-for i in range(len(MODEL)):
-    r = pandas.DataFrame([MODEL_NAME[i], MSE_EVAL[i][0], R2_EVAL[i][0], MSE_EVAL[i][1], R2_EVAL[i][1]]).transpose()
-    r.columns = ['Method', 'Training MSE', 'Training R2', 'Test MSE', 'Test R2']
-    EVAL_MODEL.append(r)
-
-# Get the result  
-df_models = pandas.concat(EVAL_MODEL, axis=0)
-
-
-# Print the result
-print(df_models.reset_index(drop=True))
-
-
-#               Method Training MSE Training R2           Test MSE             Test R2
-# 0  Linear regression     0.026466    0.651201  2603143596.200458 -34521933304.644592
-# 1      Random forest     0.054894    0.276561           0.053715            0.287655
-
-
-
-# Print the execution time
-# Device information: 
-#   - CPU: Intel(R) Core(TM) i7-12700H CPU @ 2.70GHz
-#   - RAM: 32GB
-#   - OS: Windows 10
-#   - Python: 3.7.4
-#   - Model: MSI Ryder GS76
-print("----- %s seconds -----" % (time.time() - start_time))
+# Output:
+# KNN Coefficient:  1
+# Execution time: 15.409789085388184 seconds

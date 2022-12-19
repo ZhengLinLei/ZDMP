@@ -4,5 +4,10 @@
         "name": "batch_data",
         "batch_size": 32,
         "shuffle": true
+    },
+    "build": {
+        "path": "build/model.pkl",
+        "model": "model.pkl",
+        "module": "pickle"
     }
 }
