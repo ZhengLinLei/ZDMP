@@ -1,7 +1,9 @@
 .DS_Store
 test
-.src/datasets
+*.pyc
+*.zip
+*.pyo
+*.pyd
+*.csv
 internal
-Datasets
-Datasets.zip
 __pycache__
