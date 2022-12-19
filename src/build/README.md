@@ -1,3 +1,8 @@
+If you don't find any `model.pkl` file, run the following command before using the `predict.py` script:
+```bash
+python3 src/train.py
+```
+
 Here is located the `model.pkl` to predict the future data.
 
 To execute the script, run the following command:
