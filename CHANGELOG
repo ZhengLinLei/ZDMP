@@ -3,3 +3,11 @@ Project init
    |
    |----> Structure and Basic Layout
    |----> Models selection
+   |     |----> Data Collection
+   |     |----> Data Cleaning
+   |     |----> Data Analysis
+   |     |----> Data Visualization
+   |     |----> Data Modeling
+   |     |----> Data Evaluation
+   |
+   |----> Dump model
