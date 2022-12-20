@@ -151,7 +151,8 @@ python src/data.py
 ```
 
 And you will get the following output as image.
-![Data](./docs/zdmp.jpeg)
+
+![Data](./docs/data.png)
 
 
 #### Run the training and evaluation
