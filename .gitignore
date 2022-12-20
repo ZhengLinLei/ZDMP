@@ -1,9 +1,11 @@
 .DS_Store
 test
 *.pyc
-*.zip
+# *.zip
+Datasets.zip
 *.pyo
 *.pyd
 *.csv
+deploy
 internal
 __pycache__
