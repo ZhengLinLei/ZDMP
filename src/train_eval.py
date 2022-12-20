@@ -123,11 +123,11 @@ print(df_models.reset_index(drop=True))
 # KNN Best coefficient: k = 1
 #
 #
-#               Method Training MSE Training R2           Test MSE             Test R2
-# 0  Linear regression     0.026466    0.651201  2603143596.200458 -34521933304.644592
-# 1      Random forest     0.054894    0.276561           0.053715            0.287655
-# 2        KNNeighbors     0.000056    0.999266           0.014994            0.801152
-# 3                SVM     0.044920    0.408009           0.043429            0.424063
+#               Method  Training MSE     Training R2             Test MSE                Test R2        Time
+# 0  Linear regression      0.026466        0.651201    2603143596.200458    -34521933304.644592          4s
+# 1      Random forest      0.054894        0.276561             0.053715               0.287655      1m 30s
+# 2        KNNeighbors      0.000056        0.999266             0.014994               0.801152      1m  2s
+# 3                SVM      0.044920        0.408009             0.043429               0.424063      6m  4s
 
 # In this case, the best model is the KNNeighbors
 # MSE: 0.014994

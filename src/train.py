@@ -2,8 +2,27 @@
 #   Apache License 2.0
 #   Repository: https://github.com/ZhengLinLei/ZDMP
 #
-#   This file is used to train and dump the model trained by ./train.py
+#   This file is used to train and dump the model trained by ./train.py into ./build/model.pkl
+#   The model is used in the future in ./predict.py to predict the reliability of the batch in the future
+#   The realtime data will push data to the database, and the ./predict.py will predict it in every production line checking
 #
+#   ----- Model -----
+#   KNN with k=1
+#
+#   Why? Because the dataset is not balanced, and the dataset is not big enough, so we use KNN with k=1 to predict the reliability of the batch
+#   If the dataset is big enough, we can use other models, such as SVM, RandomForest, LinearRegression, etc.
+#
+#               Method  Training MSE     Training R2             Test MSE                Test R2
+# 0  Linear regression      0.026466        0.651201    2603143596.200458    -34521933304.644592 ------> Worst model
+# 1      Random forest      0.054894        0.276561             0.053715               0.287655
+# 2        KNNeighbors      0.000056        0.999266             0.014994               0.801152 ------> Best model
+# 3                SVM      0.044920        0.408009             0.043429               0.424063
+#
+#   ----- Dataset -----
+#   ./datasets/batch_data.csv
+#
+#   ----- Dataset Description -----
+#   The dataset is collected from the production line
 
 # ------------------------- #
 
@@ -41,12 +60,21 @@ Y_kn_train_pred = kn.predict(X_train)                       # Predict the traini
 Y_kn_test_pred = kn.predict(X_test)                         # Predict the test data
 
 # Dump the model
-with open(os.path.join(CURRENT_PATH, CONFIG['build']['path']), 'wb') as f:
+with open(os.path.join(CURRENT_PATH, CONFIG['build']['path'], CONFIG['build']['path']), 'wb') as f:
     pickle.dump(kn, f)
 
 
 # Print execution time
 print('Execution time: {} seconds'.format(time.time() - start_time))
+
+
+
+# Device information: 
+#   - CPU: Apple M2  
+#   - RAM: 8GB
+#   - OS: MacOs Ventura 13.1
+#   - Python: 3.10.7
+#   - Model: Apple MacBook Pro 2022
 
 
 # Output:
