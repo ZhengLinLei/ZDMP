@@ -38,35 +38,30 @@ def predict(json_data, s_model):
     # Load model
     with open(s_model, 'rb') as file:
         model = pickle.load(file)
-    # Load data
-    df = pd.DataFrame(json_data, index=[0])
-    # We will assume that the first column is the index (timestamp, serial  number, ...)
-    df.set_index(df.columns.values[0], inplace=True)
-    
-    
-    # Preprocessing
-    X_pred = model.scaler.transform(df[model.predictors])
-    
-    # Make predictions
-    y_pred = model.predict(X_pred)
-    
-    # There should be just one observation at a time
-    y_pred = float(y_pred[0]) # prediction should be passed as a float
-    
 
-    
-    
-    
+    # Get json string and parse it to predict in K-NN model
+    json_data = json.loads(json_data)
+    X_pred = pd.DataFrame(json_data, index=[0])
+    Y_pred = model.predict(X_pred).tolist()
+
+    RELIABILITY = Y_pred[0]
+        
     # export results as JSON
     data = {
-        "id": str(df.index[0]),
+        "id": str(X_pred.index[0]),
         "timestamp": datetime.now().isoformat(timespec='milliseconds')+'Z',
         "payload": [
-                    {
-                        "name": model.response,
-                        "value": y_pred
-                    },
-                ],
+            {
+                "name": "reliability",
+                "value": RELIABILITY,
+                "max": 0.9,
+                "min": 0.7
+            },
+        ],
+        "results": {
+            "anomaly": 1 if RELIABILITY < 0.7 else 0,
+            "label": "Anomaly" if RELIABILITY < 0.7 else ("Normal" if RELIABILITY < 0.9 else "Quality")
+        },
         "raw_data": json_data
     }
 

@@ -2,6 +2,7 @@
     "dataset": {
         "path": "datasets/batch_data.csv",
         "name": "batch_data",
+        "predict": "datasets/predict.json",
         "batch_size": 32,
         "shuffle": true
     },
