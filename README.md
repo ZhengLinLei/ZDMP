@@ -1,6 +1,6 @@
 > #### Required Repositories to complete the system
 > - [ZDMP-Datasets](https://github.com/ZhengLinLei/ZDMP-datasets)
-> - [ZDMP-Client](#) (Pending to be updated)
+> - [ZDMP-Client](https://github.com/ZhengLinLei/ZDMP-client) (Pending to be updated)
 
 <br>
 <br>
@@ -58,7 +58,7 @@ This is a project that aims to provide a reference digital platform for the achi
 ## Requirements
 > #### Required Repositories to complete the system
 > - [ZDMP-Datasets](https://github.com/ZhengLinLei/ZDMP-datasets)
-> - [ZDMP-Client](#) (Pending to be updated)
+> - [ZDMP-Client](https://github.com/ZhengLinLei/ZDMP-client) (Pending to be updated)
 
 ### Project
 - [Python 3.10](https://www.python.org/downloads/release/python-3100/)
@@ -207,7 +207,7 @@ def predict_api():
 
 #### Run the client
 >
->   Read the [ZDMP-Client](#) (Pending to be updated) repository to know how to run the client.
+>   Read the [ZDMP-Client](https://github.com/ZhengLinLei/ZDMP-client) (Pending to be updated) repository to know how to run the client.
 >   The client will send the request to the python server to make predictions.
 
 
@@ -246,5 +246,5 @@ Project Link: [https://github.com/ZhengLinLei/ZDMP](https://github.com/ZhengLinL
 ### References
 * [ZDMP](https://www.zdmp.eu/)
 * [ZDMP-Datasets](https://github.com/ZhengLinLei/ZDMP-datasets)
-* [ZDMP-Client](#) (Pending to be updated)
+* [ZDMP-Client](https://github.com/ZhengLinLei/ZDMP-client) (Pending to be updated)
 * Hackaton 2022 - [ZDMP](https://www.zdmp.eu/)
