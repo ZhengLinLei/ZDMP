@@ -6,8 +6,13 @@
         "shuffle": true
     },
     "build": {
-        "path": "build/model.pkl",
+        "path": "build",
+        "data": "data.png",
         "model": "model.pkl",
         "module": "pickle"
+    },
+    "server": {
+        "host": "127.0.0.1",
+        "port": 5000
     }
 }

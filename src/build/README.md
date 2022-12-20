@@ -1,3 +1,24 @@
+# Build Folder
+
+## Index
+
+- [Data.png](#data)
+- [Model.pkl](#model)
+
+## Data.png
+If you don't find any `data.png` file, run the following command before using the `data.py` script:
+```bash
+python3 src/data.py
+```
+
+Here is located the `data.png` to visualize the data.
+
+What we can see on the graph:
+- The points are the every product with their realibility
+- In most of the cases the realibility is between 0.5 and 0.9
+
+
+## Model.pkl
 If you don't find any `model.pkl` file, run the following command before using the `predict.py` script:
 ```bash
 python3 src/train.py

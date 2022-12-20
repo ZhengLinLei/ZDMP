@@ -18,7 +18,7 @@
                 "payload": {
                     "routingKeys": [
                         {
-                            "name": "iti.datathon.iti.input"
+                            "name": "iti.datathon.input"
                         }
                     ]
                 }
@@ -32,7 +32,7 @@
                 "payload": {
                     "routingKeys": [
                         {
-                            "name": "iti.datathon.iti.output"
+                            "name": "iti.datathon.nosabemospython.output"
                         }
                     ]
                 }
