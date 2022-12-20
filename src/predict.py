@@ -40,8 +40,13 @@ def predict(json_data, s_model):
         model = pickle.load(file)
 
     # Get json string and parse it to predict in K-NN model
-    json_data = json.loads(json_data)
+    # Load data
     X_pred = pd.DataFrame(json_data, index=[0])
+    # Drop "part_id" and "timestamp" columns
+    X_pred.drop(columns=['part_id', 'timestamp'], inplace=True)
+    # We will assume that the first column is the index (timestamp, serial  number, ...)
+    X_pred.set_index(X_pred.columns.values[0], inplace=True)
+    
     Y_pred = model.predict(X_pred).tolist()
 
     RELIABILITY = Y_pred[0]
