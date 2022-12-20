@@ -12,11 +12,11 @@
 #   Why? Because the dataset is not balanced, and the dataset is not big enough, so we use KNN with k=1 to predict the reliability of the batch
 #   If the dataset is big enough, we can use other models, such as SVM, RandomForest, LinearRegression, etc.
 #
-#               Method  Training MSE     Training R2             Test MSE                Test R2
-# 0  Linear regression      0.026466        0.651201    2603143596.200458    -34521933304.644592 ------> Worst model
-# 1      Random forest      0.054894        0.276561             0.053715               0.287655
-# 2        KNNeighbors      0.000056        0.999266             0.014994               0.801152 ------> Best model
-# 3                SVM      0.044920        0.408009             0.043429               0.424063
+#!               Method  Training MSE     Training R2             Test MSE                Test R2
+#! 0  Linear regression      0.026466        0.651201    2603143596.200458    -34521933304.644592 ------> Worst model
+#! 1      Random forest      0.054894        0.276561             0.053715               0.287655
+#! 2        KNNeighbors      0.000056        0.999266             0.014994               0.801152 ------> Best model
+#! 3                SVM      0.044920        0.408009             0.043429               0.424063
 #
 #   ----- Dataset -----
 #   ./datasets/batch_data.csv
