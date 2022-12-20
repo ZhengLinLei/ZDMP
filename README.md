@@ -39,6 +39,7 @@
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
     - [Usage](#usage)
+        - [Analyze the data](#analyze-the-data)
         - [Run the training and evaluation](#run-the-training-and-evaluation)
         - [Run the server](#run-the-server)
         - [Run the client](#run-the-client)
@@ -143,6 +144,16 @@ pip install -r requirements.txt
 ```
 
 ### Usage
+#### Analyze the data
+To analyze the data run the below script, all analysis can be found in the `src/` folder.
+```sh
+python src/data.py
+```
+
+And you will get the following output as image.
+![Data](./docs/zdmp.jpeg)
+
+
 #### Run the training and evaluation
 To get the best model run the below script, all models can be found in the `src/models` folder.
 ```sh
@@ -210,7 +221,9 @@ def predict_api():
 >   Read the [ZDMP-Client](https://github.com/ZhengLinLei/ZDMP-client) (Pending to be updated) repository to know how to run the client.
 >   The client will send the request to the python server to make predictions.
 
-
+![Client](./docs/app/dashboard.png)
+![Client](./docs/app/layer.png)
+![Client](./docs/app/models.png)
 
 
 ### Contributing
