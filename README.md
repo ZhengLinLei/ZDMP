@@ -1,6 +1,6 @@
 > #### Required Repositories to complete the system
 > - [ZDMP-Datasets](https://github.com/ZhengLinLei/ZDMP-datasets)
-> - [ZDMP-Client](https://github.com/ZhengLinLei/ZDMP-client) (Pending to be updated)
+> - [ZDMP-Client](https://github.com/ZhengLinLei/ZDMP-client) 
 
 <br>
 <br>
@@ -53,13 +53,13 @@
 The ZDMP project is a European project created by a consortium of 40 entities, whose main objective is to provide a reference digital platform for the achievement of the "zero defects" objective, with which it is intended to support quality improvement both both in processes and in products.
 Manufacturing high-quality products at low cost is the best way for Europe to maintain leadership in the manufacturing industry and remain competitive in a global marketplace. This industry is in the midst of a digital transformation process, due to the proliferation and increase of new technological solutions, which are incorporated into the production chain to make it more efficient (Smart Factories and industry 4.0).
 
-This is a project that aims to provide a reference digital platform for the achievement of the "zero defects" objective, with which it is intended to support quality improvement both both in processes and in products. All of this content comes from [itic.es](https://www.itic.es/en/) ZDMP [Datathon](https://www.datasciencesociety.net/what-is-the-datathon/) and [Hackaton](https://en.wikipedia.org/wiki/Hackathon).
+This is a project that aims to provide a reference digital platform for the achievement of the "zero defects" objective, with which it is intended to support quality improvement both both in processes and in products. All of this content comes from [iti.es](https://www.iti.es/en/) ZDMP [Datathon](https://www.datasciencesociety.net/what-is-the-datathon/) and [Hackaton](https://en.wikipedia.org/wiki/Hackathon).
 
 
 ## Requirements
 > #### Required Repositories to complete the system
 > - [ZDMP-Datasets](https://github.com/ZhengLinLei/ZDMP-datasets)
-> - [ZDMP-Client](https://github.com/ZhengLinLei/ZDMP-client) (Pending to be updated)
+> - [ZDMP-Client](https://github.com/ZhengLinLei/ZDMP-clien) 
 
 ### Project
 - [Python 3.10](https://www.python.org/downloads/release/python-3100/)
@@ -69,7 +69,7 @@ This is a project that aims to provide a reference digital platform for the achi
 
 ### Components
 - [ZDMP-Datasets](https://github.com/ZhengLinLei/ZDMP-datasets)
-- [ZDMP-Client](#) (Pending to be updated)
+- [ZDMP-Client](https://github.com/ZhengLinLei/ZDMP-client) 
     - [NodeJS](https://nodejs.org/en/)
     - [Express](https://expressjs.com/)
 
@@ -260,5 +260,5 @@ Project Link: [https://github.com/ZhengLinLei/ZDMP](https://github.com/ZhengLinL
 ### References
 * [ZDMP](https://www.zdmp.eu/)
 * [ZDMP-Datasets](https://github.com/ZhengLinLei/ZDMP-datasets)
-* [ZDMP-Client](https://github.com/ZhengLinLei/ZDMP-client) (Pending to be updated)
+* [ZDMP-Client](https://github.com/ZhengLinLei/ZDMP-client)
 * Hackaton 2022 - [ZDMP](https://www.zdmp.eu/)
