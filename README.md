@@ -244,9 +244,9 @@ Distributed under the Apache 2.0 License. See `LICENSE` for more information.
 
 
 ### Contact
-Zheng Lin Lei - [zheng9112003@icloud.com](mailto:zheng9112003@icloud.com) | [zheng9112003@gmail.com](mailto:zheng9112003@gamil.com)
-Guillermo Breva de Dios - No contact available
-Elena Clofent Muñoz - No contact available
+* Zheng Lin Lei - [zheng9112003@icloud.com](mailto:zheng9112003@icloud.com) | [zheng9112003@gmail.com](mailto:zheng9112003@gamil.com)
+* Guillermo Breva de Dios - No contact available
+* Elena Clofent Muñoz - No contact available
 
 Project Link: [https://github.com/ZhengLinLei/ZDMP](https://github.com/ZhengLinLei/ZDMP)
 
